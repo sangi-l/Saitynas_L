@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAflMFNuDi4kyTdOw4SCLPVQAAAAACAAAAAAAQZgAAAAEAACAAAAChLbZ0mg98TSk9tdoOB4AC9kdt5UoqTJEGNr0dJExAUAAAAAAOgAAAAAIAACAAAABFpVU070ColuKXkdJFr+OJJoHlm4AMftMBW+PPD0LSiIAAAACxylLyg/TcXxj4/BXmik2U8Rpky4Cq5M5q5qa/vPNUYAJzjZrUvVErxtEe48FDFTomCfpinSDAlZxznPhdnbRd9OBNdhsWm/zs9SNytqgm0iIYGuqZeFqo0v0/OANnMcAeewSSnzxChxBBB3zoU3/MVCJMUwHDkFR6m35kxjHKPUAAAAA4e1GAabTVv8JpQ+SBiTSmJqk0KTfoPjMayHwzfWH7A6f+gNKY3Pe3LEZZnL/PfZVu9YvmwZquT5LbkfcdeWkW</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Saitynas_L1">
+      <Value>Data Source=tcp:saitynas-l1dbserver.database.windows.net,1433%3bInitial Catalog=Saitynas_L1_db%3bUser Id=user%40saitynas-l1dbserver%3bPassword=Saitynas1</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>
