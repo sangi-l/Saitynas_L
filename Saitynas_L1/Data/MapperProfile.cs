@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Saitynas_L1.Data.Dtos.Auth;
 using Saitynas_L1.Data.Dtos.Author;
 using Saitynas_L1.Data.Dtos.Book;
 using Saitynas_L1.Data.Dtos.Department;
@@ -25,6 +26,8 @@ namespace Saitynas_L1.Data
             CreateMap<Book, BookDto>();
             CreateMap<BookDto, Book>();
             CreateMap<UpdateBookDto, Book>();
+
+            CreateMap<User, UserDto>();
         }
     }
 }

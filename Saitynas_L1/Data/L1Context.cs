@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using Saitynas_L1.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Saitynas_L1.Data
 {
-    public class L1Context : DbContext
+    public class L1Context : IdentityDbContext<User>
     {
         public DbSet<Department> Departments { get; set; }
         public DbSet<Author> Authors { get; set; }

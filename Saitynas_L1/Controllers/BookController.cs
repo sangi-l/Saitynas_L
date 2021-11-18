@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Saitynas_L1.Auth.Model;
 using Saitynas_L1.Data.Dtos.Book;
 using Saitynas_L1.Data.Entities;
 using Saitynas_L1.Data.Repositories;
@@ -26,6 +28,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoles.Worker + "," + UserRoles.User)]
         public async Task<IEnumerable<BookDto>> GetAllAsync(int departmentId, int authorId)
         {
             var author = await _authorRepository.GetAsync(departmentId, authorId);
@@ -36,6 +39,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpGet("{bookId}")]
+        [Authorize(Roles = UserRoles.Worker + "," + UserRoles.User)]
         public async Task<ActionResult<BookDto>> GetAsync(int departmentId, int authorId, int bookId)
         {
             var author = await _authorRepository.GetAsync(departmentId, authorId);
@@ -48,6 +52,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoles.Worker)]
         public async Task<ActionResult<BookDto>> PostAsync(int departmentId, int authorId, BookDto bookDto)
         {
             var author = await _authorRepository.GetAsync(departmentId, authorId);
@@ -62,6 +67,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpPut("{bookId}")]
+        [Authorize(Roles = UserRoles.Worker)]
         public async Task<ActionResult<BookDto>> PutAsync(int departmentId, int authorId, int bookId, UpdateBookDto bookDto)
         {
             var author = await _authorRepository.GetAsync(departmentId, authorId);
@@ -79,6 +85,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpDelete("{bookId}")]
+        [Authorize(Roles = UserRoles.Worker)]
         public async Task<ActionResult> DeleteAsync(int departmentId, int authorId, int bookId)
         {
             var author = await _authorRepository.GetAsync(departmentId, authorId);

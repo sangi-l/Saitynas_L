@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nesiu\\source\\repos\\Saitynas_L1\\Saitynas_L1.csproj": {}
+    "C:\\Users\\nesiu\\Documents\\GitHub\\Saitynas_L\\Saitynas_L1\\Saitynas_L1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nesiu\\source\\repos\\Saitynas_L1\\Saitynas_L1.csproj": {
+    "C:\\Users\\nesiu\\Documents\\GitHub\\Saitynas_L\\Saitynas_L1\\Saitynas_L1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nesiu\\source\\repos\\Saitynas_L1\\Saitynas_L1.csproj",
+        "projectUniqueName": "C:\\Users\\nesiu\\Documents\\GitHub\\Saitynas_L\\Saitynas_L1\\Saitynas_L1.csproj",
         "projectName": "Saitynas_L1",
-        "projectPath": "C:\\Users\\nesiu\\source\\repos\\Saitynas_L1\\Saitynas_L1.csproj",
+        "projectPath": "C:\\Users\\nesiu\\Documents\\GitHub\\Saitynas_L\\Saitynas_L1\\Saitynas_L1.csproj",
         "packagesPath": "C:\\Users\\nesiu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nesiu\\source\\repos\\Saitynas_L1\\obj\\",
+        "outputPath": "C:\\Users\\nesiu\\Documents\\GitHub\\Saitynas_L\\Saitynas_L1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -49,6 +49,18 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[8.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[3.1.21, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.21, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",

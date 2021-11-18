@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Saitynas_L1.Auth.Model;
 using Saitynas_L1.Data.Dtos.Department;
 using Saitynas_L1.Data.Entities;
 using Saitynas_L1.Data.Repositories;
@@ -24,12 +26,14 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = UserRoles.Worker + "," + UserRoles.User)]
         public async Task<IEnumerable<DepartmentDto>> GetAllAsync()
         {
             var departments = await _departmentRepository.GetAsync();
             return departments.Select(o => _mapper.Map<DepartmentDto>(o));
         }
         [HttpGet("{departmentId}")]
+        [Authorize(Roles = UserRoles.Worker + "," + UserRoles.User)]
         public async Task<ActionResult<DepartmentDto>> GetAsync(int departmentId)
         {
             var department = await _departmentRepository.GetAsync(departmentId);
@@ -39,6 +43,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult<DepartmentDto>> PostAsync(DepartmentDto departmentDto)
         {
             var department = _mapper.Map<Department>(departmentDto);
@@ -48,6 +53,7 @@ namespace Saitynas_L1.Controllers
             return Created($"/api/department/{department.Id}", _mapper.Map<DepartmentDto>(department));
         }
         [HttpPut("{departmentId}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult<DepartmentDto>> PutAsync(int departmentId, UpdateDepartmentDto departmentDto)
         {;
             var oldDepartment = await _departmentRepository.GetAsync(departmentId);
@@ -62,6 +68,7 @@ namespace Saitynas_L1.Controllers
         }
 
         [HttpDelete("{departmentId}")]
+        [Authorize(Roles = UserRoles.Admin)]
         public async Task<ActionResult> DeleteAsync(int departmentId)
         {
             var department = await _departmentRepository.GetAsync(departmentId);
